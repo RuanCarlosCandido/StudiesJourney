@@ -1,6 +1,6 @@
-package org.ruan.enums;
+package org.general.enums;
 
-import static org.ruan.enums.Letters.*;
+import static org.general.enums.Letters.*;
 
 public class ReduzindoIFs {
 

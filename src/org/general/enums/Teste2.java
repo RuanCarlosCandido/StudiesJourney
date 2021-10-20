@@ -1,6 +1,6 @@
-package org.ruan.enums;
+package org.general.enums;
 
-import static org.ruan.enums.Colors.*;
+import static org.general.enums.Colors.*;
 
 public class Teste2 {
 

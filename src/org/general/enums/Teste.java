@@ -1,4 +1,4 @@
-package org.ruan.enums;
+package org.general.enums;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

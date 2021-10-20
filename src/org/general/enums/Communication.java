@@ -1,4 +1,4 @@
-package org.ruan.enums;
+package org.general.enums;
 
 public class Communication<E extends Enum<E> & EnumConverter<E>> {
 

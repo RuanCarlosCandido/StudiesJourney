@@ -1,4 +1,4 @@
-package org.ruan.enums;
+package org.general.enums;
 
 import java.util.HashMap;
 import java.util.Map;

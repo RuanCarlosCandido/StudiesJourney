@@ -1,4 +1,4 @@
-package org.ruan.enums;
+package org.general.enums;
 
 public enum PersonalInfo implements EnumConverter<PersonalInfo> {
 

@@ -1,4 +1,4 @@
-package org.ruan.enums;
+package org.general.enums;
 
 public enum MethodEnums implements Util {
 
