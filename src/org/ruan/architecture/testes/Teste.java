@@ -10,8 +10,8 @@ import java.lang.reflect.TypeVariable;
 import java.security.ProtectionDomain;
 import java.util.Arrays;
 
-import org.ruan.architecture.concreteAnimals.Cat;
-import org.ruan.architecture.concreteAnimals.Dog;
+import org.architecture.concreteAnimals.Cat;
+import org.architecture.concreteAnimals.Dog;
 
 public class Teste {
 
