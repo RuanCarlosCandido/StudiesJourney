@@ -1,4 +1,4 @@
-package com.contactbook;
+package org.general.contactbook;
 
 import java.util.Scanner;
 

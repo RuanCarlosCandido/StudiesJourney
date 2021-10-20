@@ -1,4 +1,4 @@
-package com.contactbook;
+package org.general.contactbook;
 
 public class FullContactBookException extends Exception {
 

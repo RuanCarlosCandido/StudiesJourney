@@ -1,4 +1,4 @@
-package com.towerofhanoi;
+package org.general.towerofhanoi;
 
 import java.util.Stack;
 

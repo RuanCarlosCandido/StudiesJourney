@@ -1,4 +1,4 @@
-package com.trafficlight;
+package org.general.trafficlight;
 
 public class ThreadTrafficLight implements Runnable {
 	TrafficLightColor color;

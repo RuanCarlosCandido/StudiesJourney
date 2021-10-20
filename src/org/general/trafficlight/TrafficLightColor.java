@@ -1,4 +1,4 @@
-package com.trafficlight;
+package org.general.trafficlight;
 
 public enum TrafficLightColor {
 	GREEN(1000), YELLOW(300), RED(2000);

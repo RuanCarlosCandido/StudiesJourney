@@ -1,4 +1,4 @@
-package com.strings;
+package org.general.strings;
 
 public class CountYZ {
 
