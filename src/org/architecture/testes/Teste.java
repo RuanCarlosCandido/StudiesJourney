@@ -1,4 +1,4 @@
-package org.ruan.architecture.testes;
+package org.architecture.testes;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedType;
