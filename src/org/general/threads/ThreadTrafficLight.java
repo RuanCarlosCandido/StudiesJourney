@@ -1,17 +1,24 @@
-package org.general.trafficlight;
+package org.general.threads;
+
+import static org.general.threads.TrafficLightColor.*;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.general.util.Util;
 
 public class ThreadTrafficLight implements Runnable {
+	public static final Logger LOGGER = Util.getLogger();
 	TrafficLightColor color;
 	boolean stop;
 	boolean colorChanged;
 
 	public ThreadTrafficLight() {
-		this.color = TrafficLightColor.RED;
-		this.stop = false;
+		this.color 		  = RED;
+		this.stop 		  = false;
 		this.colorChanged = false;
+
 		new Thread(this).start();
-		// Thread thread = this.;
-		// thread.start();
 	}
 
 	@Override
@@ -19,25 +26,25 @@ public class ThreadTrafficLight implements Runnable {
 		while (!stop) {
 			try {
 				Thread.sleep(this.color.getStandBy());
-				this.Mudarcolor();
+				this.ChangeColor();
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.FINE, null, e);
 			}
 		}
 	}
 
-	private synchronized void Mudarcolor() {
+	private synchronized void ChangeColor() {
 		switch (this.color) {
 		case RED:
-			this.color = TrafficLightColor.GREEN;
+			this.color = GREEN;
 			break;
 
 		case YELLOW:
-			this.color = TrafficLightColor.RED;
+			this.color = RED;
 			break;
 
 		case GREEN:
-			this.color = TrafficLightColor.YELLOW;
+			this.color = YELLOW;
 			break;
 
 		default:
@@ -52,7 +59,7 @@ public class ThreadTrafficLight implements Runnable {
 			try {
 				wait();
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.FINE, null, e);
 			}
 		}
 		this.colorChanged = false;

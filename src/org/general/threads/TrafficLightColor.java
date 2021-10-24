@@ -1,4 +1,4 @@
-package org.general.trafficlight;
+package org.general.threads;
 
 public enum TrafficLightColor {
 	GREEN(1000), YELLOW(300), RED(2000);

@@ -1,4 +1,4 @@
-package org.general.trafficlight;
+package org.general.threads;
 
 public class TraficLightSimulator {
 
@@ -9,7 +9,7 @@ public class TraficLightSimulator {
 	public static void main(String[] args) throws InterruptedException {
 		ThreadTrafficLight traficLight = new ThreadTrafficLight();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {	
 			System.out.println(traficLight.getColor());
 			traficLight.waitColorChange();
 		}

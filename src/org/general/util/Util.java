@@ -1,5 +1,12 @@
 package org.general.util;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
 /**
  * Class with bundle of utilities.
  * 
@@ -44,12 +51,28 @@ public class Util {
 		util = u;
 	}
 
-	public boolean isEnum(Class c) {
+	public boolean isEnum(Class<?> c) {
         // An enum must both directly extend java.lang.Enum and have
         // the ENUM bit set; classes for specialized enum constants
         // don't do the former.
         return  c.getSuperclass() == java.lang.Enum.class;
     }	
+	
+	public static Logger getLogger() {
+		String logFilePath = new File(System.getProperty("user.dir")) + "/logs/logs.txt";
+		final Logger LOGGER = Logger.getLogger(logFilePath);
+		try {
+			final FileHandler handler = new FileHandler(logFilePath, false);
+			LOGGER.addHandler(handler);
+			handler.setFormatter(new SimpleFormatter());
+			LOGGER.setLevel(Level.FINE);
+		} catch (SecurityException | IOException e1) {
+			e1.printStackTrace();
+		}
+
+		return LOGGER;
+	}
+
 }
 
 

@@ -1,30 +1,14 @@
 package org.general.logger;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+
+import org.general.util.Util;
 
 public class LoggerTesting {
 
-	public static final Logger LOGGER = geraLogger();
+	public static final Logger LOGGER = Util.getLogger();
 
-	public static Logger geraLogger() {
-		String logFilePath = new File(System.getProperty("user.dir")) + "/Logs/logs.txt";
-		final Logger LOGGER = Logger.getLogger(logFilePath);
-		try {
-			final FileHandler handler = new FileHandler(logFilePath, false);
-			LOGGER.addHandler(handler);
-			handler.setFormatter(new SimpleFormatter());
-			LOGGER.setLevel(Level.FINE);
-		} catch (SecurityException | IOException e1) {
-			e1.printStackTrace();
-		}
-
-		return LOGGER;
-	}
 
 	public static void lancaException() {
 
