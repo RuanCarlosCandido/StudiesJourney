@@ -69,4 +69,20 @@ public class Dog extends Mammal {
 				+ this.subAbstractClassMethodIsOviparous();
 	}
 
+	public String getRace() {
+		return race;
+	}
+
+	public void setRace(String race) {
+		this.race = race;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }
