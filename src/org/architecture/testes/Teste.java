@@ -17,7 +17,7 @@ public class Teste {
 
 	public static void main(String[] args) {
 
-		Dog dog1 = new Dog("srd", "Diana");
+		Dog dog1 = new Dog("srd", "Diana",8);
 		dog1.subAbstractClassMethodSetOviparous(false);
 
 		System.out.println(dog1);

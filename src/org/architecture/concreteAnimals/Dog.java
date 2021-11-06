@@ -12,7 +12,8 @@ public class Dog extends Mammal {
 
 	private String race;
 	private String name;
-
+	private int age;
+	
 	public Dog() {
 		super();
 	}
@@ -21,9 +22,10 @@ public class Dog extends Mammal {
 		super(oviparous);
 	}
 
-	public Dog(String race, String name) {
+	public Dog(String race, String name, int age) {
 		this.race = race;
 		this.name = name;
+		this.age  = age;
 	}
 
 	public String concreteClassMethodGetRace() {
@@ -63,11 +65,6 @@ public class Dog extends Mammal {
 		return 14;
 	}
 
-	@Override
-	public String toString() {
-		return (race != null ? "race=" + race + ", " : "") + (name != null ? "name=" + name + ", " : "") + "isOviparous = "
-				+ this.subAbstractClassMethodIsOviparous();
-	}
 
 	public String getRace() {
 		return race;
@@ -85,4 +82,20 @@ public class Dog extends Mammal {
 		this.name = name;
 	}
 
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return (race != null ? "race=" + race + ", " : "") + (name != null ? "name=" + name + ", " : "")
+				+ (age != 0 ? "age=" + age + ", " : "") + "isOviparous = "
+				+ this.subAbstractClassMethodIsOviparous();
+	}
+	
+	
 }

@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.architecture.concreteAnimals.Dog;
@@ -13,27 +14,39 @@ public class StreamsTest {
 
 	public static void main(String[] args) {
 
-		Dog dog1 = new Dog("srd", "Mel");
-		Dog dog2 = new Dog("srd", "Diana");
-		Dog dog3 = new Dog("pit Bull", "Fiona");
-		Dog dog4 = new Dog("German Sheperd", "Thor");
-
 		List<Dog> dogKennel = new ArrayList<Dog>();
-		dogKennel.add(dog1);
-		dogKennel.add(dog2);
-		dogKennel.add(dog3);
-		dogKennel.add(dog4);
+		dogKennel.add(new Dog("srd", "Mel",3));
+		dogKennel.add(new Dog("srd", "Diana",5));
+		dogKennel.add(new Dog("pit Bull", "Fiona",7));
+		dogKennel.add(new Dog("German Sheperd", "Thor",3));
+		dogKennel.add(new Dog("German Sheperd", "k9",6));	
 		dogKennel.add(null);
 
+		dogKennel.stream().forEach(System.out::println);
+		//equivalent 
+		dogKennel.stream().forEach(dog ->System.out.println(dog));
+				
+		
 		/* this is the default implementation of the forEach method */
 		Consumer<? super Dog> action = dog -> System.out.println(dog);
-
+		//equivalent
+		Consumer<? super Dog> actionEq = System.out::println;
+		
+		
 		/* execute the action there's no return */
-		action.accept(dog2);
-
+		action.accept(new Dog("pit Bull", "Fred",9));
+		
 		/* basic for each interaction with no return */
 		dogKennel.forEach(action);
 
+		
+		Stream.of("10","20","30")
+	      .mapToInt(Integer::parseInt)
+	      .average()
+	      .ifPresent(System.out::println);
+		
+		
+		
 		/* remove any object that match the filter */
 		Predicate<? super Dog> filter = dog -> dog == null;
 		boolean removed = dogKennel.removeIf(filter);
@@ -65,7 +78,7 @@ public class StreamsTest {
 		System.out.println(count);
 
 		/* returns a list without any repetition */
-		dogKennel.add(dog3);
+		dogKennel.add(new Dog("pit Bull", "Alice",9));
 		System.out.println("distinct");
 		Stream<Dog> distinctedKennel = dogKennel.stream().distinct();
 		distinctedKennel.forEach(action);
@@ -75,6 +88,13 @@ public class StreamsTest {
 		Stream<Dog> filteredStream = dogKennel.stream().filter(filter);
 		filteredStream.forEach(action);
 
+		List<String> names = dogKennel.stream().filter(dog -> dog != null).map(dog -> dog.getName())
+				.map(str -> str.toUpperCase()).collect(Collectors.toList());
+		System.out.println(names);
+		
+		List<Dog> names2 = dogKennel.stream().filter(dog -> dog != null).sorted(Comparator.comparing(Dog::getRace)).collect(Collectors.toList());
+		System.out.println(names2);
+		
 	}
 
 }
