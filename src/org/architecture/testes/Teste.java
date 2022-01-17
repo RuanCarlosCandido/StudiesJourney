@@ -13,6 +13,9 @@ import java.util.Arrays;
 import org.architecture.concreteAnimals.Cat;
 import org.architecture.concreteAnimals.Dog;
 
+import com.general.reflection.FieldSpy;
+import com.general.reflection.ScapeGoat;
+
 public class Teste {
 
 	public static void main(String[] args) {
