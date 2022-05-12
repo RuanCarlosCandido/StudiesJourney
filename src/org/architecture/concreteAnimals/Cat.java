@@ -14,35 +14,29 @@ public class Cat extends Mammal {
 
 	protected Cat() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected Cat(boolean oviparous) {
 		super(oviparous);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void interfaceMethodBreath() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public boolean interfaceMethodIsTerrestrial() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	protected double subAbstractClassMethodgetGestationTime() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int abstractClassMethodLifeTime() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
