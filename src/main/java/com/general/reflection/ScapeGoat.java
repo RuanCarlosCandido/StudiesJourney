@@ -7,11 +7,13 @@ public class ScapeGoat<T> {
 		public enum Spy { BLACK , WHITE }
 	 	public volatile int share;
 	    public int instance;
-	    public class Inner {};
+	    protected int instance1;
+	    public static class Inner {};
 	
 	 public boolean[][] b = {{ false, false }, { true, true } };
-	    public String name  = "Alice";
-	    public List<Integer> list;
+	    public final String name  = "Alice";
+	    transient List<Integer> list;
+	    volatile List<Integer> list2;
 	    public T val;
 	    
 	    // for the morbidly curious

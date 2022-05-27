@@ -20,7 +20,7 @@ public class SetIteratingTests {
 		long somaTree = 0;
 
 		int a = 0;
-		int limite = 100000;
+		int limite = 10000;
 
 		Set<Object> hashSet = new HashSet<>();
 		Set<Object> treeSet = new TreeSet<>();

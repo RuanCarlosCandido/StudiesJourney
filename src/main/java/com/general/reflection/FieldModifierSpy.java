@@ -9,7 +9,6 @@ import java.lang.reflect.Modifier;
 
 public class FieldModifierSpy {
 
-
 	public static void printModifiers(Class<?> c) {
 		try {
 			Field[] flds = c.getDeclaredFields();
@@ -21,21 +20,11 @@ public class FieldModifierSpy {
 			}
 
 			out.format("Fields in Class '%s' containing modifiers:  %s%n", c.getName(), Modifier.toString(searchMods));
-			boolean found = false;
+
 			for (Field f : flds) {
-				int foundMods = f.getModifiers();
-				// Require all of the requested modifiers to be present
-				if ((foundMods & searchMods) == searchMods) {
-					out.format("%-8s [ synthetic=%-5b enum_constant=%-5b ]%n", f.getName(), f.isSynthetic(),
-							f.isEnumConstant());
-					found = true;
-				}
+				out.format("%-8s [ synthetic=%-5b enum_constant=%-5b ]%n", f.getName(), f.isSynthetic(),
+						f.isEnumConstant());
 			}
-
-			if (!found) {
-				out.format("No matching fields%n");
-			}
-
 		} catch (Exception x) {
 			x.printStackTrace();
 		}
